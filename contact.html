@@ -1,26 +1,71 @@
-
 <!DOCTYPE html>
-<html>
-<head><title>Contact - IBN ABASS</title><link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | IBN ABASS ENTERPRISES</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header><h1>Contact Us</h1></header>
-<nav>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html">Contact</a>
-</nav>
-<main>
-  <form action="#" method="post">
-    <label>Name:</label><br>
-    <input type="text" name="name"><br><br>
-    <label>Email:</label><br>
-    <input type="email" name="email"><br><br>
-    <label>Message:</label><br>
-    <textarea name="message" rows="5" cols="30"></textarea><br><br>
-    <input type="submit" value="Send">
-  </form>
-</main>
-<footer><p>&copy; 2025 IBN ABASS ENTERPRISES</p></footer>
+  <header>
+    <h1>Contact Us</h1>
+    <p>Reach out to IBN ABASS ENTERPRISES</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <form action="https://formspree.io/f/xyzwdpqn" method="POST" id="contact-form">
+        <label for="name">Your Name:</label><br />
+        <input type="text" name="name" id="name" required /><br /><br />
+
+        <label for="email">Your Email:</label><br />
+        <input type="email" name="email" id="email" required /><br /><br />
+
+        <label for="message">Your Message:</label><br />
+        <textarea name="message" id="message" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Send</button>
+      </form>
+
+      <p id="form-status" style="color: green; display: none;">Thank you! Your message has been sent.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 IBN ABASS ENTERPRISES</p>
+  </footer>
+
+  <script>
+    // Optional: Handle form confirmation without leaving the page
+    const form = document.getElementById("contact-form");
+    const status = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          Accept: "application/json"
+        }
+      });
+
+      if (response.ok) {
+        form.reset();
+        status.style.display = "block";
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    });
+  </script>
 </body>
-</html>
+          </html>
+    
