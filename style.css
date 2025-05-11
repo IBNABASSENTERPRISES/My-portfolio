@@ -1,95 +1,56 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
 }
 
-header {
-    background-color: #075e54;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+header, nav, footer {
+  background-color: #075e54;
+  color: white;
+  text-align: center;
+  padding: 1rem;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  display: inline-block;
 }
 
-#menu-toggle {
-    display: none;
-    background: none;
-    color: white;
-    font-size: 1.5rem;
-    border: none;
+main {
+  padding: 1rem;
+  max-width: 960px;
+  margin: auto;
 }
 
-section {
-    padding: 2rem;
-    text-align: center;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: 400px;
-    margin: 1rem auto;
-}
-
-form input, form textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    padding: 0.7rem;
-    background-color: #25d366;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
+img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+  margin: auto;
 }
 
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
-    margin-top: 2rem;
+  font-size: 0.9rem;
+  margin-top: 2rem;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 600px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-    }
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
 
-    nav ul.show {
-        display: flex;
-    }
-
-    #menu-toggle {
-        display: inline;
-    }
+  header, nav, footer {
+    padding: 0.8rem;
+  }
 }
